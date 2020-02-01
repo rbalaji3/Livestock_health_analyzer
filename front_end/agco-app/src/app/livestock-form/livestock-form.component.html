@@ -1,21 +1,22 @@
 <div class="container">
     <h1>Livestock Health Analyzer</h1>
-    <form>
+
+    <form #livestockform="ngForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
         <label for="inside_temperature">inside_temperature</label>
-        <input type="text" class="form-control" id="inside_temperature" required>
+        <input type="text" [(ngModel)]="model.inside_temperature" class="form-control" name="inside_temperature" required>
 
         <label for="humidity">humidity</label>
-        <input type="text" class="form-control" id="humidity" required>
+        <input type="text" [(ngModel)]="model.humidity" class="form-control" name="humidity" required>
 
         <label for="water_consumption">water_consumption</label>
-        <input type="text" class="form-control" id="water_consumption" required>
+        <input type="text" [(ngModel)]="model.water_consumption" class="form-control" name="water_consumption" required>
 
         <label for="outside_temperature">outside_temperature</label>
-        <input type="text" class="form-control" id="outside_temperature" required>
+        <input type="text" [(ngModel)]="model.outside_temperature" class="form-control" name="outside_temperature" required>
 
         <label for="percent_complete">percent_complete</label>
-        <input type="text" class="form-control" id="percent_complete" required>
+        <input type="text" [(ngModel)]="model.percent_complete" class="form-control" name="percent_complete" required>
       </div>
 
       <button type="submit" class="btn btn-success">Submit</button>
