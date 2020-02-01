@@ -2,13 +2,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { DynamicFormComponent }         from './dynamic-form.component';
-import { DynamicFormQuestionComponent } from './dynamic-form-question.component';
+import { LivestockFormComponent } from './livestock-form/livestock-form.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LivestockFormComponent
   ],
   imports: [
     BrowserModule,
