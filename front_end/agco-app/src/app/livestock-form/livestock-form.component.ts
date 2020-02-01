@@ -16,11 +16,17 @@ export class LivestockFormComponent implements OnInit {
   }
 
   model = new data_model(0,0,0,0,0);
+  response: any;
+
+  submitted = false;
 
   onSubmit() {
-    console.log(this.model);
+    let api_url = 'http://127.0.0.1:5000/api';
 
-    this.http.post<any>('https://jsonplaceholder.typicode.com/posts', { title: 'Angular POST Request Example' }).subscribe(data => {
+    this.http.post<any>(api_url, this.model).subscribe(data => {
+      this.response = data;
+      this.submitted = true;
+
     })
 
   }

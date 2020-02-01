@@ -1,24 +1,51 @@
+
+
+<div class="span">
+  <mat-toolbar color="primary"> <h1>Poultry Perfection</h1>
+    <br>
+    <br>
+    <img height='42' width='42' src='https://svgsilh.com/svg/40898.svg'/>
+  </mat-toolbar>
+</div>
+<br>
+<br>
 <div class="container">
-    <h1>Livestock Health Analyzer</h1>
 
     <form #livestockform="ngForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <label for="inside_temperature">inside_temperature</label>
-        <input type="text" [(ngModel)]="model.inside_temperature" class="form-control" name="inside_temperature" required>
+        <label for="inside_temperature">inside temperature</label>
+        <input matInput type="text" [(ngModel)]="model.inside_temperature" class="form-control" name="inside_temperature" required>
 
-        <label for="humidity">humidity</label>
-        <input type="text" [(ngModel)]="model.humidity" class="form-control" name="humidity" required>
+        <label for="inside_humidity">inside humidity</label>
+        <input type="text" [(ngModel)]="model.inside_humidity" class="form-control" name="inside_humidity" required>
 
-        <label for="water_consumption">water_consumption</label>
-        <input type="text" [(ngModel)]="model.water_consumption" class="form-control" name="water_consumption" required>
+        <label for="current_date">current date</label>
+        <input type="text" [(ngModel)]="model.current_date" class="form-control" name="current_date" required>
 
-        <label for="outside_temperature">outside_temperature</label>
-        <input type="text" [(ngModel)]="model.outside_temperature" class="form-control" name="outside_temperature" required>
-
-        <label for="percent_complete">percent_complete</label>
-        <input type="text" [(ngModel)]="model.percent_complete" class="form-control" name="percent_complete" required>
+        <label for="cycle_start_date">cycle_start_date</label>
+        <input type="text" [(ngModel)]="model.cycle_start_date" class="form-control" name="cycle_start_date" required>
       </div>
 
       <button type="submit" class="btn btn-success">Submit</button>
     </form>
+
+    <br>
+    <br>
+    <mat-divider>
+    </mat-divider>
+
+    <h3 *ngIf="submitted">Recommended inside temperature: {{response.inside_temperature}}</h3>
+    <mat-progress-bar *ngIf="submitted" color="" mode="determinate" value="{{response.inside_temperature}}"></mat-progress-bar>
+
+    <mat-divider>
+    </mat-divider>
+
+    <h3 *ngIf="submitted">Recommended inside humidity: {{response.inside_humidity}}</h3>
+    <mat-progress-bar *ngIf="submitted" color="" mode="determinate" value="{{response.inside_humidity}}"></mat-progress-bar>
+
+    <h3 *ngIf="submitted">Predicted: {{response.inside_humidity}}</h3>
+    <mat-progress-bar *ngIf="submitted" color="" mode="determinate" value="{{response.inside_humidity}}"></mat-progress-bar>
+
+
+
 </div>
