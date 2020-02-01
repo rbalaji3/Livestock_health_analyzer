@@ -15,7 +15,7 @@ export class LivestockFormComponent implements OnInit {
 
   }
 
-  model = new data_model(0,0,0,0,0);
+  model = new data_model(0,0,0,0);
   response: any;
 
   submitted = false;

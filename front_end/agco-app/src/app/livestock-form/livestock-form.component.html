@@ -13,17 +13,20 @@
 
     <form #livestockform="ngForm" (ngSubmit)="onSubmit()">
       <div class="form-group">
-        <label for="inside_temperature">inside temperature</label>
+        <label for="inside_temperature">Barn Temperature (F)</label>
         <input matInput type="text" [(ngModel)]="model.inside_temperature" class="form-control" name="inside_temperature" required>
 
-        <label for="inside_humidity">inside humidity</label>
+        <label for="inside_humidity">Barn Humidity (%)</label>
         <input type="text" [(ngModel)]="model.inside_humidity" class="form-control" name="inside_humidity" required>
 
-        <label for="current_date">current date</label>
+        <label for="current_date">Current Date (mm/dd/yyyy)</label>
         <input type="text" [(ngModel)]="model.current_date" class="form-control" name="current_date" required>
 
-        <label for="cycle_start_date">cycle_start_date</label>
+        <label for="cycle_start_date">Cycle Start Date (mm/dd/yyy)</label>
         <input type="text" [(ngModel)]="model.cycle_start_date" class="form-control" name="cycle_start_date" required>
+
+        <label for="cycle_length">Length of Cycle (days)</label>
+        <input type="text" [(ngModel)]="model.cycle_length" class="form-control" name="cycle_length" required>
       </div>
 
       <button type="submit" class="btn btn-success">Submit</button>
@@ -34,17 +37,17 @@
     <mat-divider>
     </mat-divider>
 
-    <h3 *ngIf="submitted">Recommended inside temperature: {{response.inside_temperature}}</h3>
-    <mat-progress-bar *ngIf="submitted" color="" mode="determinate" value="{{response.inside_temperature}}"></mat-progress-bar>
+    <h3 *ngIf="submitted">Recommended inside temperature: {{response.optimal_parameter_temperature}}</h3>
+    <mat-progress-bar *ngIf="submitted" color="" mode="determinate" value="{{response.optimal_parameter_temperature/200}}"></mat-progress-bar>
 
     <mat-divider>
     </mat-divider>
 
-    <h3 *ngIf="submitted">Recommended inside humidity: {{response.inside_humidity}}</h3>
-    <mat-progress-bar *ngIf="submitted" color="" mode="determinate" value="{{response.inside_humidity}}"></mat-progress-bar>
+    <h3 *ngIf="submitted">Recommended inside humidity: {{response.optimal_parameter_humidity}}</h3>
+    <mat-progress-bar *ngIf="submitted" color="" mode="determinate" value="{{response.optimal_parameter_humidity/100}}"></mat-progress-bar>
 
-    <h3 *ngIf="submitted">Predicted: {{response.inside_humidity}}</h3>
-    <mat-progress-bar *ngIf="submitted" color="" mode="determinate" value="{{response.inside_humidity}}"></mat-progress-bar>
+    <h3 *ngIf="submitted">Predicted weight: {{response.optimal_weight}}</h3>
+    <mat-progress-bar *ngIf="submitted" color="" mode="determinate" value="{{response.optimal_weight/25}}"></mat-progress-bar>
 
 
 
