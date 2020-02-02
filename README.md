@@ -1,15 +1,4 @@
-# Livestock_health_analyzer
-Analyzes dead chickens and pigs by seeing if they eat or not. 
+# Poultry Perfection  
 
-
-GAMEPLAN:
-
-1) Remove all useless data
-
-2) Create data structure to store all useful data
-
-3) Perform anomoly detection
-
-4) Report findings
-
-5) Make Web-App
+- Using provided Barn Data, we developed a Deep-Learning algorithm to predict the expected weight of poultry
+    - Recommends controlled changes to increase the Feed Conversion Rate
